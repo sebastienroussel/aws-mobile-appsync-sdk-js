@@ -1,4 +1,4 @@
-{"name": "forked"
+{"name": "forked",
     "private": true,
     "scripts": {
         "bootstrap": "lerna bootstrap"
