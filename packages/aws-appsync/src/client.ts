@@ -222,7 +222,8 @@ class AWSAppSyncClient<TCacheShape extends NormalizedCacheObject> extends Apollo
                 };
             });
         });
-        const link = waitForRehydrationLink.concat(customLink || createAppSyncLink({ url, region, auth, complexObjectsCredentials, conflictResolver }));
+        const link = waitForRehydrationLink.concat(customLink || createAppSyncLink({ url, region, auth, complexObjectsCredentials, conflictResolver, resultsFetcherLink = createHttpLink({ uri: url, headers: {'authorization' : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50IjoiVGVzdGZyYW5jZSIsInZldElkIjoiMTAwIiwiY2xpbmljSWQiOiIxMDAifQ.tR9zj2Ip9XSaORlqXzIymTOmei6t4rekqbJna9jp8ms"}}),
+ }));
 
         const newOptions = {
             ...options,
